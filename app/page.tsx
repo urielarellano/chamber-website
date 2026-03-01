@@ -1,65 +1,76 @@
+'use client'
+
 import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import { useEffect, useRef } from "react";
+import { BookingInfo } from '@/types/booking';
+import BookForm from "@/components/BookForm";
+import BookingTimes from "@/components/BookingTimes";
+import WeeklyCalendar from "@/components/calendars/WeeklyCalendar";
+import MonthlyCalendar from "@/components/calendars/MonthlyCalendar";
+
+import mendotaSign from '@/public/mendota-sign.jpg';
+import giftCertificate from '@/public/chamber-gift-certificate.jpg';
 
 export default function Home() {
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const handleScriptLoad = () => {
+    // Tell TypeScript that window.calendar exists
+    const win = window as any; 
+
+    if (win.calendar && targetRef.current) {
+      win.calendar.schedulingButton.load({
+        url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2UL5wYhcQSGE9v2_azCGP-Gp8WQzjynoz1ZhJadzt7QuheHBb27MVHBk4XRMBkZ8leOGS-XoKd?gv=true",
+        color: "#039BE5",
+        label: "Book an appointment",
+        target: targetRef.current,
+      });
+    }
+  };
+
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="page bg-gray-100">
+      <Image
+        src={mendotaSign}
+        alt='mendota sign'
+        className='md:w-[55%] w-full h-auto shadow-md'
+      />
+      <h1 className="mb-0!">Find Everything You Need To Know About Mendota, Illinois!</h1>
+      <h3>Here you'll find all Mendota events, businesses, Chamber members and more.</h3>
+      <div className="line"></div>
+      <h2>Upcoming Mendota Events</h2>
+      <WeeklyCalendar></WeeklyCalendar>
+
+      <div className="line"></div>
+      <h2> Welcome to Mendota, Illinois!</h2>
+      <p>The Mendota Area Chamber of Commerce, established in 1945, is a not-for-profit organization of businesses representing industry, retail, service, professionals, and agriculture in partnership with tourism and government to further promote economic growth and quality of life in Mendota. The strength of the Chamber lies in the active involvement of its membership. Both large and small businesses are represented and influence the direction of the organization.</p>
+      <Link href="/about/about-us">Learn More...</Link>
+
+      <div className="line"></div>
+      <h2>Gift Certificates</h2>
+      <Image
+        src={giftCertificate}
+        alt='gift certificates'
+        className='md:w-[90%] w-full h-auto shadow-md'
+      />
+      
+
+      
+      {/* Google Calendar button <>
+        <link
+          rel="stylesheet"
+          href="https://calendar.google.com/calendar/scheduling-button-script.css"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <Script
+          src="https://calendar.google.com/calendar/scheduling-button-script.js"
+          strategy="afterInteractive"
+          onLoad={handleScriptLoad} // Wait until the script loads
+        />
+        <div ref={targetRef}></div>
+      </> */}
     </div>
   );
 }

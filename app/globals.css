@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: none;
+}
+
+/* header */
+header {
+  @apply bg-white shadow-sm md:relative sticky top-0 z-10 inset-x-0 flex flex-col items-center;
+  will-change: top;
+}
+header .header-items {
+  @apply md:max-w-[80vw] mx-auto px-6 py-4 flex items-center md:justify-center justify-between w-full bg-white;
+}
+.desktop-nav {
+  @apply hidden md:flex gap-4 items-center justify-center flex-wrap max-w-[75vw] p-5 pt-2;
+}
+.dropdown {
+  @apply absolute left-0 top-full w-48 bg-white shadow-sm border-1 border-gray-400 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-10;
+}
+
+header .mobile-menu {
+  @apply md:hidden overflow-y-auto transition-all duration-250;
+}
+
+
+/* footer  */
+footer {
+  @apply flex flex-col p-5 border-t-1 gap-5  bg-gray-200 max-w-[100vw];
+
+  /* desktop */
+  @apply md:pl-10 md:pr-10 md:gap-8 items-center;
+}
+
+.footer-cols {
+  @apply flex flex-col gap-5;
+
+  /* desktop */
+  @apply md:flex-row md:gap-12;
+}
+
+.f-col {
+  @apply flex flex-col gap-1;
+}
+.f-col h1 {
+  @apply font-bold mb-1;
+}
+footer a {
+  @apply text-black transition-colors duration-70 cursor-pointer;
+
+  /* on hover */
+  @apply hover:text-blue-500 hover:underline;
+}
+
+/* main content */
+.main-container {
+  @apply grid grid-cols-1 bg-stone-100 pt-5 pl-1 pr-1 md:grid-cols-[1fr_22vw] md:pl-[10vw] md:pr-[10vw];
+}
+.main-container main {
+  @apply md:pr-5 pr-0;
+}
+
+/* side bar */
+.sidebar-container {
+  @apply md:block h-full p-2 border-t pt-6 mt-8 md:pl-10 pb-6 md:pt-2 md:mt-0 md:border-l md:border-t-0 border-gray-300;
+}
+
+.sidebar {
+  @apply flex flex-col items-center gap-6;
+}
+
+.info-box-header {
+  @apply bg-gray-700 text-white flex flex-row items-center gap-2 p-2 pl-6 pr-6 text-lg rounded-t;
+}
+.info-box {
+  @apply bg-white rounded-b border shadow-md p-4 ;
+}
+
+
+/* normal page */
+.page {
+  @apply flex flex-col gap-5 p-5;
+}
+.calendar-page {
+  @apply flex flex-col gap-5 p-5 md:pl-5 md:pr-5 pl-0 pr-0;
+}
+
+.page h1, .calendar-page h1 {
+  @apply text-4xl font-bold md:w-[85%] w-full mb-2;
+}
+
+.page h2, .calendar-page h2 {
+  @apply text-2xl font-bold md:w-[80%] w-full;
+}
+
+.page h3, .calendar-page h3 {
+  @apply text-xl md:w-[75%] w-full;
+}
+
+
+
+.page p, .calendar-page p {
+  @apply text-[18px]! md:w-[70%] w-full leading-[1.5];
+}
+
+.page a {
+  @apply text-[16px] underline leading-[1.5];
+}
+
+
+/* etc */
+.line {
+  @apply h-[2px] w-[60px] bg-gray-600 rounded mt-5;
+}
+
+
+
+/* booking modal */
+.modal-container {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50
+}
+
+.modal {
+  @apply max-h-[98vh]! overflow-y-auto bg-white p-6 rounded-xl shadow-xl flex flex-col items-center gap-3;
+}
+.close-modal {
+  @apply cursor-pointer hover:bg-red-400 bg-red-500 text-white p-4 pt-2 pb-2 rounded self-end;
 }
