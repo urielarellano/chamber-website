@@ -1,20 +1,34 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'candice2u';
+  src: url('/candice/candice.woff') format('truetype');
+  
+}
+@font-face {
+  font-family: 'glacial';
+  src: url('/glacial-indifference/GlacialIndifference-Regular.otf') format('truetype');
+  
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'glacial', sans-serif;
+
   position: relative;
   overflow-x: none;
 }
 
 /* header */
 header {
-  @apply bg-white shadow-sm md:relative sticky top-0 z-10 inset-x-0 flex flex-col items-center;
+  @apply shadow-sm md:relative sticky top-0 z-10 inset-x-0 flex flex-col items-center;
   will-change: top;
+  background-color: #fffe9e;
 }
 header .header-items {
-  @apply md:max-w-[80vw] mx-auto px-6 py-4 flex items-center md:justify-center justify-between w-full bg-white;
+  @apply md:max-w-[80vw] mx-auto px-6 py-4 flex items-center md:justify-center justify-between w-full;
 }
 .desktop-nav {
   @apply hidden md:flex gap-4 items-center justify-center flex-wrap max-w-[75vw] p-5 pt-2;
@@ -58,7 +72,8 @@ footer a {
 
 /* main content */
 .main-container {
-  @apply grid grid-cols-1 bg-stone-100 pt-5 pl-1 pr-1 md:grid-cols-[1fr_22vw] md:pl-[10vw] md:pr-[10vw];
+  @apply grid grid-cols-1 bg-white pt-5 pl-1 pr-1 md:grid-cols-[1fr_22vw] md:pl-[10vw] md:pr-[10vw];
+  background-color: #fffe9e;
 }
 .main-container main {
   @apply md:pr-5 pr-0;
@@ -90,7 +105,8 @@ footer a {
 }
 
 .page h1, .calendar-page h1 {
-  @apply text-4xl font-bold md:w-[85%] w-full mb-2;
+  @apply text-4xl md:w-[85%] w-full mb-2;
+  font-family: 'candice2u', cursive;
 }
 
 .page h2, .calendar-page h2 {

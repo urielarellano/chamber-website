@@ -17,7 +17,7 @@ export default function Spotlights() {
           target="_blank"
           rel="noopener noreferrer"
           className='cursor-pointer hover:underline'>
-          IVCC Connorr Cofoid</a>
+          IVCC Connor Cofoid</a>
         - Click to View Spotlight video
       </span>
     </div>

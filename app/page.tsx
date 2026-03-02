@@ -32,7 +32,7 @@ export default function Home() {
 
 
   return (
-    <div className="page bg-gray-100">
+    <div className="page">
       <Image
         src={mendotaSign}
         alt='mendota sign'

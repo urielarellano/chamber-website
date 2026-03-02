@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import smallLogo from "@/public/chamber-logo-small.png";
+import newLogo from '@/public/new-mendota-logo.png';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -70,11 +71,19 @@ export default function Header() {
     <header>
       <div className="header-items">
         {/* Logo */}
-        <Link href="/">
-          <Image src={smallLogo} alt="chamber logo"
-            className="md:h-15 h-12 w-auto object-contain"
-          />
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/">
+            <Image src={smallLogo} alt="chamber logo"
+              className="md:h-15 h-12 w-auto object-contain"
+            />
+          </Link>
+          <Link href="/">
+            <Image src={newLogo} alt="new logo"
+              className="md:h-24 h-12 w-auto border-red-500"
+            />
+          </Link>
+        </div>
+        
 
         {/* Mobile Hamburger */}
         <div className="md:hidden cursor-pointer"
