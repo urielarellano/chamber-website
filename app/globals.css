@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 @font-face {
   font-family: 'candice2u';
@@ -10,7 +11,6 @@
   src: url('/glacial-indifference/GlacialIndifference-Regular.otf') format('truetype');
   
 }
-
 
 body {
   background: var(--background);
@@ -89,10 +89,10 @@ footer a {
 }
 
 .info-box-header {
-  @apply bg-gray-700 text-white flex flex-row items-center gap-2 p-2 pl-6 pr-6 text-lg rounded-t;
+  @apply bg-white text-black font-bold flex flex-row items-center gap-2 p-2 pl-6 pr-6 text-lg rounded-t;
 }
 .info-box {
-  @apply bg-white rounded-b border shadow-md p-4 ;
+  @apply bg-white rounded-b shadow-md p-4 ;
 }
 
 
@@ -146,3 +146,126 @@ footer a {
 .close-modal {
   @apply cursor-pointer hover:bg-red-400 bg-red-500 text-white p-4 pt-2 pb-2 rounded self-end;
 }
+
+/* calendars */
+.weekly-calendar {
+  @apply p-4 border rounded-lg;
+  background: rgb(243, 226, 255);
+}
+
+.monthly-calendar {
+  @apply md:p-4 pt-4 pb-4 border rounded-lg md:w-auto w-full;
+  background: rgb(243, 226, 255);
+}
+.calendar-days {
+  @apply grid grid-cols-7 text-center font-semibold mb-2 sticky md:top-0 top-[9vh] w-full md:p-1 p-5 pt-2 pb-2 md:gap-0 gap-8 w-fit z-10;
+  background: rgb(243, 226, 255);
+}
+
+/* calendar colors */
+.MainCalendar {
+  background-color: #7BD0FB;
+}
+.twentyone-plus {
+  background-color: #F4E299;
+}
+.five-eight {
+  background-color: #B7A8A3;
+}
+.five-eight-graders {
+  background-color: #B3E588;
+}
+.nine-twelve {
+  background-color: #FFAA8F;
+}
+.family {
+  background-color: #F693B5;
+}
+.k-four {
+  background-color: #F09C9C;
+}
+.seniors {
+  background-color: #B7A8A3;
+}
+.mendota-city {
+  background-color: #F4E299;
+}
+.public-events {
+  background-color: #FFE680;
+}
+.holidays {
+  background-color: #7BDCA0;
+}
+
+
+/* event hovers */
+.monthly-event {
+  position: relative;
+  display: inline-block;
+  @apply shadow-sm rounded md:px-1 px-0! mb-2 cursor-default md:text-[13px] text-[11px];
+}
+.weekly-event {
+  position: relative;
+  display: inline-block;
+  @apply text-sm p-1 mb-1  shadow-sm rounded px-1 mb-2 cursor-default;
+}
+
+.hover-content {
+  display: none;
+  position: absolute;
+  top:0;
+  transform: translateX(50px)
+    translateY(-10px);
+  background: white;
+  font-size: 16px !important;
+  width: 300px;
+  padding: 10px 15px;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 100;
+  overflow-x: hidden;
+  border: 1px solid black;
+}
+
+.weekly-event:hover .hover-content, .monthly-event:hover .hover-content {
+  @apply flex flex-col gap-3;
+}
+
+
+/* 
+original calendar colors
+
+.MainCalendar {
+  background-color: #039BE5;
+}
+.twentyone-plus {
+  background-color: #E4C441;
+}
+.five-eight {
+  background-color: #795548;
+}
+.five-eight-graders {
+  background-color: #7CB342;
+}
+.nine-twelve {
+  background-color: #F4511E;
+}
+.family {
+  background-color: #D81B60;
+}
+.k-four {
+  background-color: #AD1457;
+}
+.seniors {
+  background-color: #795548;
+}
+.mendota-city {
+  background-color: #E4C441;
+}
+.public-events {
+  background-color: #F6BF26;
+}
+.holidays {
+  background-color: #0B8043;
+}
+*/

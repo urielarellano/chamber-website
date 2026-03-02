@@ -10,13 +10,17 @@ export default function CalendarPage() {
       <div className="flex flex-col md:flex-col">
   {/* Weekly Calendar */}
   <div className="order-2 md:order-1 md:mt-0 mt-12!">
-    <h2>Weekly Calendar</h2>
+    <h2 className='mb-4'>Weekly Calendar 
+      <br /><span className='text-[16px]!'> (hover or click event to see details)</span>
+    </h2>
     <WeeklyCalendar />
   </div>
 
   {/* Monthly Calendar */}
-  <div className="order-1 md:order-2 ">
-    <h2>Monthly Calendar</h2>
+  <div className="order-1 md:order-2 md:mt-6 mt-0">
+    <h2 className='mb-4'>Monthly Calendar
+      <br /><span className='text-[16px]!'> (hover or click event to see details)</span>
+    </h2>
     <MonthlyCalendar />
   </div>
 </div>

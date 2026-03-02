@@ -41,7 +41,9 @@ export default function Home() {
       <h1 className="mb-0!">Find Everything You Need To Know About Mendota, Illinois!</h1>
       <h3>Here you'll find all Mendota events, businesses, Chamber members and more.</h3>
       <div className="line"></div>
-      <h2>Upcoming Mendota Events</h2>
+      <h2>Upcoming Mendota Events
+        <br /><span className='text-[16px]!'> (hover or click event to see details)</span>
+      </h2>
       <WeeklyCalendar></WeeklyCalendar>
 
       <div className="line"></div>
