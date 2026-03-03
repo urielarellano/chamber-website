@@ -4,9 +4,7 @@ import React from 'react'
 export default function EventsPage() {
   return (
     <div className="page">
-      <h1>Mendota Events
-        <br /><span className='text-[16px]!'> (hover or click event to see details)</span>
-      </h1>
+      <h1>Mendota Events</h1>
       <WeeklyCalendar/>
     </div>
     

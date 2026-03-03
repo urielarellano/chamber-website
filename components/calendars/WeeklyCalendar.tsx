@@ -90,12 +90,17 @@ export default function WeeklyCalendar({
 
   return (
     <>
+      <span>(hover or click event to see details)</span>
       {/* filter buttons */}
       <div className="flex flex-row flex-wrap gap-3 mb-4"> 
         {calendars.map((calendar) => (
           <div
             key={calendar.calendar_id}
-            className={`${calendarId === calendar.calendar_id ? calendar.className : ''} cursor-pointer px-2 py-1 rounded-xl shadow-sm bg-yellow-50 border-1 text-center`}
+            className={`
+              ${calendar.className} 
+              cursor-pointer px-2 py-1 rounded-xl shadow-sm border text-center hover:opacity-100
+              ${calendarId === calendar.calendar_id ? 'border-2 shadow-md' : 'opacity-45 '}
+            `}
             onClick={() => setCalendarId(calendar.calendar_id)}
           >
             {calendar.name}

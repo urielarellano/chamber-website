@@ -227,6 +227,15 @@ footer a {
   border: 1px solid black;
 }
 
+@media (max-width: 640px) {
+  .hover-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .weekly-event:hover .hover-content, .monthly-event:hover .hover-content {
   @apply flex flex-col gap-3;
 }
