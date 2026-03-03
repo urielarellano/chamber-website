@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
             singleEvents: true,
             orderBy: "startTime",
             // Keep organizer if you need it, it's not the bottleneck
-            fields: "items(id,summary,description,start,end,htmlLink,organizer)",
+            fields: "items(id,summary,location,description,start,end,htmlLink,organizer)",
           });
 
           return (response.data.items || []).map((event) => ({

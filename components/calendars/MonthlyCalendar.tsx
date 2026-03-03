@@ -6,6 +6,7 @@ interface CalendarEvent {
   id: string;
   summary: string;
   description?: string;
+  location?: string;
   start: { dateTime?: string; date?: string };
   end: { dateTime?: string; date?: string };
   htmlLink: string;
@@ -188,6 +189,11 @@ export default function MonthlyCalendar({
                     {formatTime(event.start.dateTime)} <b>{event.summary}</b>
                     <div className="hover-content">
                       <b>{event.summary}</b>
+                      {event.location && (
+                        <div>
+                          <b>Location:</b> {event.location}
+                        </div>
+                      )}
                       {event.description && !hasHtml(event.description) && (
                         <div className='overflow-y-auto'>{event.description}</div>
                       )}

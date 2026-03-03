@@ -202,7 +202,12 @@ footer a {
 .monthly-event {
   position: relative;
   display: inline-block;
-  @apply shadow-sm rounded md:px-1 px-0! mb-2 cursor-default md:text-[13px] text-[11px];
+  white-space: normal;
+  max-width: 100%;
+  display: -webkit-box;           /* required for line clamp */
+  -webkit-box-orient: vertical;   /* vertical orientation */
+  -webkit-line-clamp: 8;
+  @apply shadow-sm rounded md:px-1 px-0! mb-2 cursor-default md:text-[13px] text-[11px] ;
 }
 .weekly-event {
   position: relative;

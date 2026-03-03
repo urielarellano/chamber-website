@@ -6,6 +6,7 @@ interface CalendarEvent {
   id: string;
   summary: string;
   description?: string;
+  location?: string;
   start: { dateTime?: string; date?: string };
   end: { dateTime?: string; date?: string };
   htmlLink: string;
@@ -161,6 +162,11 @@ export default function WeeklyCalendar({
                     {formatTime(event.start.dateTime)} <b>{event.summary}</b>
                     <div className="hover-content">
                       <b>{event.summary}</b>
+                      {event.location && (
+                        <div>
+                          <b>Location:</b> {event.location}
+                        </div>
+                      )}
                       {event.description && !hasHtml(event.description) && (
                         <div className='overflow-y-auto'>{event.description}</div>
                       )}
@@ -175,7 +181,6 @@ export default function WeeklyCalendar({
                         onClick={() => window.open(event.htmlLink, "_blank")}>
                           Open in Google Calendar
                       </div>
-                      <div>{event.calendarName}</div>
                     </div>
                   </div>
                 ))}
