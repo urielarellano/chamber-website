@@ -24,6 +24,8 @@ export default function Sidebar() {
   return (
     <div className='sidebar'>
       <BookButton/>
+
+      
       
       {images.map((src) => {
         const filename = src.split("/").pop() || "";
