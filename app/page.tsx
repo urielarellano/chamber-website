@@ -12,6 +12,7 @@ import MonthlyCalendar from "@/components/calendars/MonthlyCalendar";
 
 import mendotaSign from '@/public/mendota-sign.jpg';
 import giftCertificate from '@/public/chamber-gift-certificate.jpg';
+import imageName from '@/public/Kelly-Lewis-25.jpeg';
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,12 @@ export default function Home() {
         src={giftCertificate}
         alt='gift certificates'
         className='md:w-[90%] w-full h-auto shadow-md'
+      />
+
+      <Image
+        src={imageName}
+        alt='gift certificates'
+        className='md:w-[400px] w-full h-auto shadow-md'
       />
       
 

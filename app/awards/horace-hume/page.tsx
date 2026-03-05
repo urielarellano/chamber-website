@@ -11,7 +11,7 @@ export default function HoraceHumeAward() {
       <h2>2024 Horace Hume Award Winner</h2>
       <Image src={award}
         alt='sweet corn volunteer award'
-        className='md:h-[80vh] h-[60vh] w-auto object-contain'
+        className='md:w-[400px] h-[auto] w-full object-contain'
       />
       <p>Tony Troyer</p>
       <div className="line"></div>

@@ -11,7 +11,7 @@ export default function TomMerwinAward() {
       <h2>2025 Tom Merwin Gold Star Employee</h2>
       <Image src={award}
         alt='sweet corn volunteer award'
-        className='md:h-[80vh] h-[60vh] w-auto object-contain'
+        className='md:w-[400px] h-[auto] w-full object-contain'
       />
       <p>Celina Garza- Financial Plus Credit Union</p>
       <div className="line"></div>

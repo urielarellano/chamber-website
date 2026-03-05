@@ -11,7 +11,7 @@ export default function BeautificationAward() {
       <h2>2025 Beautification Award Winner</h2>
       <Image src={award}
         alt='sweet corn volunteer award'
-        className='md:h-[80vh] h-[60vh] w-auto object-contain'
+        className='md:w-[400px] h-[auto] w-full object-contain'
       />
       <p>The Coffee Barn</p>
       <div className="line"></div>

@@ -3,9 +3,6 @@ import Link from 'next/link';
 import fs from "fs";
 import path from "path";
 
-import corn from '@/public/sidebar-events/corn-cob.jpg';
-import valentineBaby from '@/public/sidebar-events/vbae.jpg';
-import valentineSponsors from '@/public/sidebar-events/Valentine-Baby-Contest-2026-w300.png'
 import smallLogo from '@/public/chamber-logo-small.png';
 import ProfileBook from '@/public/2025-Cover.jpg';
 import BookButton from './BookButton';
